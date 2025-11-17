@@ -1,0 +1,33 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.heart {
+  background: url(https://img.freepik.com/premium-vector/heart-sprite-animation-grow-disappear-sprite-sequence-like-button-pressed-game-heart-explosion-graphic-template-vector-animate-frames-set_102902-6704.jpg) -24px -173px no-repeat;
+  width: 140px;
+  height: 140px;
+  cursor: pointer;
+  border: none;
+}
+
+.heart_active {
+  background-position: -3px -34px;
+}
+
+.heartT {
+  background: url(https://img.freepik.com/premium-vector/heart-sprite-animation-grow-disappear-sprite-sequence-like-button-pressed-game-heart-explosion-graphic-template-vector-animate-frames-set_102902-6704.jpg) -24px -173px no-repeat;
+  width: 140px;
+  height: 140px;
+  cursor: pointer;
+  border: none;
+  
+  font-size: 30px;
+  color: white;
+}
+
+.heartT_active {
+  
+}
