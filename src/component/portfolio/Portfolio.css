@@ -1,3 +1,5 @@
+/* .Task-1 {} */
+
 .filters {
   width: 400px;
   height: 40px;
@@ -73,9 +75,12 @@
   color: rgb(252, 251, 251);
 }
 
+.filters {
+  margin: 3px auto;
+}
+
 .filteredList {
   display: inline;
- 
 }
 
 .image {
