@@ -2,26 +2,35 @@ import React from 'react';
 // import React, { useState, useRef } from 'react';
 import ReactDOM from 'react';
 import './Portfolio.css';
+import projects from'./projects.jsx';
 
 // function Toolbar({ filters, selected, onSelectFilter }) {
 function Toolbar({ filters, onSelectFilter }) {
   return (
-    <div className="filters">
-      {filters.map((item) => {
-        // const classname = item === selected ? "active" : "button"; // ?
-        return (
-          <div
-            key={item}
-            className={item.replace(/\s/g, '-')}
-            onClick={() => {
-              onSelectFilter(item);
-            }}
-          >{item}</div>
-        );
-      })}
-    </div>
+    <>
+      <div className="filters">
+        {filters.map((item) => {
+          // const classname = item === selected ? "active" : "button"; // ?
+          return (
+            <div
+              key={item}
+              className={item.replace(/\s/g, '-')}
+              onClick={() => {
+                onSelectFilter(item);
+              }}
+            >{item}</div>
+          );
+        })}
+      </div>
+      <div className="filteredList"></div>
+    </>
   );
 };
+
+// function applyingFilter(filter) {   // console.log('--- applyingFilter - ' + filter);
+//   const filteredList = document.querySelector('.filteredList');
+//   console.log(filteredList);
+// }
 
 function Portfolio() {
   return (
@@ -29,7 +38,29 @@ function Portfolio() {
       <Toolbar
       filters={["All", "Websites", "Flayers", "Business Cards"]}
       selected="All"
-      onSelectFilter={(filter) => {console.log(filter);}}/>
+      onSelectFilter={(filter) => { // console.log(filter); // applyingFilter(filter);
+        const filteredList = document.querySelector('.filteredList');
+        
+        if (filter === 'All') {
+          filteredList.innerHTML = '';
+          projects.forEach(project => {
+            const img = document.createElement('img');
+            img.classList = 'image'
+            img.src = project.img;
+            filteredList.appendChild(img);
+          });
+        } else {
+          filteredList.innerHTML = '';
+          projects.forEach(project => {
+            const img = document.createElement('img');
+            if (project.category === filter) {
+              img.classList = 'image'
+              img.src = project.img;
+              filteredList.appendChild(img);
+            }
+          });
+        };
+      }}/>
     </>
   )
 }
