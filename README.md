@@ -37,7 +37,7 @@ mv my-vue-app/* ./
 
 Необходимо реализовать портфолио с фильтрами, аналогичное указанному на изображении.
 
-![portfolio-all](./assets/portfolio-all.png)
+![portfolio-all](./blob/main/assets/portfolio-all.png)
 
 ## Описание проекта
 
@@ -67,7 +67,7 @@ mv my-vue-app/* ./
 - из компонента `Portfolio` передать активный фильтр в свойство `selected` компонента `Toolbar`;
 - в компоненте `Portfolio` отфильтровать по активному фильтру проекты и передать их в компонент `ProjectList`.
 
-![portfolio-cards.png](./assets/portfolio-cards.png)
+![portfolio-cards.png](./blob/main/assets/portfolio-cards.png)
 
 Набор данных для отображения:
 ```js
