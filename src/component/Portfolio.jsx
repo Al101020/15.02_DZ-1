@@ -22,6 +22,7 @@ function Toolbar({ filters, onSelectFilter }) {
           );
         })}
       </div>
+      <div className="titleFilter"></div>
       <div className="filteredList"></div>
     </>
   );
@@ -39,22 +40,35 @@ function Portfolio() {
       filters={["All", "Websites", "Flayers", "Business Cards"]}
       selected="All"
       onSelectFilter={(filter) => { // console.log(filter); // applyingFilter(filter);
+        const titleFilter = document.querySelector('.titleFilter');
         const filteredList = document.querySelector('.filteredList');
         
         if (filter === 'All') {
           filteredList.innerHTML = '';
+          titleFilter.innerHTML = '';
+          const title = document.createElement('h1');
+          title.classList = 'titleFilter';
+          title.textContent = filter;
+          titleFilter.appendChild(title);
+
           projects.forEach(project => {
             const img = document.createElement('img');
-            img.classList = 'image'
+            img.classList = 'image';
             img.src = project.img;
             filteredList.appendChild(img);
           });
         } else {
           filteredList.innerHTML = '';
+          titleFilter.innerHTML = '';
+          const title = document.createElement('h1');
+          title.classList = 'titleFilter';
+          title.textContent = filter;
+          titleFilter.appendChild(title);
+
           projects.forEach(project => {
             const img = document.createElement('img');
             if (project.category === filter) {
-              img.classList = 'image'
+              img.classList = 'image';
               img.src = project.img;
               filteredList.appendChild(img);
             }

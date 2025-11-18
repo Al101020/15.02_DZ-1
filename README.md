@@ -1,11 +1,25 @@
 __________
-2025.11.17
+2025.11.18
   ДЗ
+
   +++
 npm run lint
 git status
 git add -A
+git commit -m "commit-7"
+git push
+  +++
 
+__________
+2025.11.17
+  ДЗ
+
+  +++
+npm run lint
+git status
+git add -A
+git commit -m "commit-6"
+git push
   +++
   
 __________
